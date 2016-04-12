@@ -1,0 +1,2 @@
+class ThermostatSummaryController < ApplicationController
+end

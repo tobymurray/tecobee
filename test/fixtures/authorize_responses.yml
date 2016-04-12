@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ecobeePin: MyString
+  code: MyString
+  scope: MyString
+  expiresIn: MyString
+  interval: MyString
+
+two:
+  ecobeePin: MyString
+  code: MyString
+  scope: MyString
+  expiresIn: MyString
+  interval: MyString

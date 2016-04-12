@@ -1,0 +1,24 @@
+<h1>Example#index</h1>
+<p>Find me in app/views/example/index.html.erb</p>
+
+<%= label_tag("API Key") %>
+<%= text_field_tag("apiKey") %>
+<button id="submit">Submit</button>
+
+<div id="authorizeResponse"></div>
+
+
+<script>
+  $('#submit').click(doThings);
+
+  function doThings() {
+    console.log("Doing things!");
+    var apiKey = $('#apiKey').val();
+    var url = "https://api.ecobee.com/authorize?response_type=ecobeePin&client_id=".concat(apiKey).concat("&scope=smartWrite");
+    $.getJSON(url, function (data) {
+      var response = JSON.stringify(data, null, 4);
+      $('#authorizeResponse').html(response);
+    });
+  }
+
+</script>
