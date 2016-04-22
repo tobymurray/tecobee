@@ -1,17 +1,25 @@
 <button type="button" id="thermostat_button">Thermostat info</button>
 <div id="div1"></div>
 
-<button type="button" id="thermostat_button">Thermostat info</button>
-<div id="div1"></div>
+<button type="button" id="thermostat_summary_button">Thermostat info</button>
+<div id="div2"></div>
 
-<button type="button" id="thermostat_button">Thermostat info</button>
+<button type="button" id="thermostat_button">Thermostat Summary info</button>
 <div id="div1"></div>
 
 <script>
   $("#thermostat_button").click(function () {
     $.ajax({
-      url: "/thermostat/hit", success: function (result) {
+      url: "/thermostat", success: function (result) {
         $("#div1").html(result);
+      }
+    });
+  });
+
+  $("#thermostat_summary_button").click(function () {
+    $.ajax({
+      url: "/thermostat_summary", success: function (result) {
+        $("#div2").html(result);
       }
     });
   });

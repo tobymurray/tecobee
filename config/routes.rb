@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'request_token/request_token', to: 'token_controller#request_token'
   get 'token/refresh', to: 'token_controller#refresh'
 
-  get 'thermostat/hit', to: 'thermostat#hit'
+  get 'thermostat', to: 'thermostat#get'
+  get 'thermostat_summary', to: 'thermostat_summary#get'
 end
