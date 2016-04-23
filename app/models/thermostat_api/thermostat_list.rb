@@ -1,0 +1,15 @@
+class ThermostatList
+  def initialize(attributes)
+    @identifier = attributes["identifier"]
+    @name = attributes["name"]
+    @thermostat_revision = attributes["thermostatRev"]
+    @is_registered = attributes["isRegistered"]
+    @model_number = attributes["modelNumber"]
+    @brand = attributes["brand"]
+    @features = attributes["features"]
+    @last_modified = attributes["lastModified"]
+    @thermostat_time = attributes["thermostatTime"]
+    @utc_time = attributes["utcTime"]
+    @alerts = attributes["alerts"]
+  end
+end

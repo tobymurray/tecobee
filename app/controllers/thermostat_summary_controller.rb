@@ -1,7 +1,7 @@
 class ThermostatSummaryController < ApplicationController
   def get
     token_request_response = TokenRequestResponse.first!
-    query_string = URI.encode "json={\"selection\":{\"includeAlerts\":\"true\",\"selectionType\":\"registered\"}}"
+    query_string = URI.encode "json={\"selection\":{\"includeAlerts\":\"true\",\"selectionType\":\"registered\",\"includeEquipmentStatus\":\"true\"}}"
     url = "#{EcobeeApi::THERMOSTAT_SUMMARY_ROOT}?#{query_string}"
     Rails.logger.debug(url)
     begin
@@ -15,6 +15,7 @@ class ThermostatSummaryController < ApplicationController
         Rails.logger.debug("Error code is #{error.code} and Success code is #{ResponseCode.success.code}")
       end
     end
+    Rails.logger.debug("Response is #{response.to_str}")
     @response = ThermostatSummaryResponse.new(JSON.parse(response.to_str))
   end
 end
