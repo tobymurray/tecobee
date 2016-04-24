@@ -1,7 +1,7 @@
 class ThermostatController < ApplicationController
   def get
     @token_request_response = TokenRequestResponse.first!
-    query_string = URI.encode "json={\"selection\":{\"includeAlerts\":\"true\",\"selectionType\":\"registered\"}}"
+    query_string = URI.encode "json={\"selection\":{\"includeAlerts\":\"true\",\"selectionType\":\"registered\",#{UtilityRestriction::INCLUDE_RUNTIME}:\"true\"}}"
     url = "#{EcobeeApi::THERMOSTAT_ROOT}?#{query_string}"
     Rails.logger.debug(url)
     begin

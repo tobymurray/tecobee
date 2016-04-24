@@ -1,4 +1,4 @@
-class UtilityRestrictions
+class UtilityRestriction
   INCLUDE_RUNTIME = "\"includeRuntime\""
   INCLUDE_EXTENDED_RUNTIME = "\"includeExtendedRuntime\""
   INCLUDE_ELECTRICITY = "\"includeElectricity\""

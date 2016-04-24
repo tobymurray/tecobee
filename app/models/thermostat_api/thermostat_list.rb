@@ -1,4 +1,6 @@
 class ThermostatList
+  RUNTIME = "runtime"
+
   def initialize(attributes)
     @identifier = attributes["identifier"]
     @name = attributes["name"]
@@ -11,5 +13,6 @@ class ThermostatList
     @thermostat_time = attributes["thermostatTime"]
     @utc_time = attributes["utcTime"]
     @alerts = attributes["alerts"]
+    @runtime = Runtime.new(attributes[RUNTIME])
   end
 end
