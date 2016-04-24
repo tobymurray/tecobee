@@ -33,8 +33,10 @@ class Runtime
     @desired_humidity = attributes[DESIRED_HUMIDITY]
     @desired_dehumidity = attributes[DESIRED_DEHUMIDITY]
     @desired_fan_mode = attributes[DESIRED_FAN_MODE]
+  end
 
-    Rails.logger.debug("The temperature is #{Utils::fahrenheit_to_celsius(@actual_temperature/10.0)}")
+  def actual_temperature()
+    Utils::fahrenheit_to_celsius(@actual_temperature/10.0)
   end
 
 end

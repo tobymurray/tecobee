@@ -1,6 +1,8 @@
 class ThermostatList
   RUNTIME = "runtime"
 
+  attr_reader :runtime
+
   def initialize(attributes)
     @identifier = attributes["identifier"]
     @name = attributes["name"]
