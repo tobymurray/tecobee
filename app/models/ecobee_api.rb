@@ -7,4 +7,6 @@ class EcobeeApi
   JSON_CONTENT_TYPE = "application/json"
   UTF8 = "charset=UTF-8"
   JSON_CONTENT_TYPE_UTF8 = "#{JSON_CONTENT_TYPE};#{UTF8}"
+  RUNTIME_REPORT_ROOT = "#{API_ROOT}/1/runtimeReport"
+  FORMAT_JSON = "format=json"
 end

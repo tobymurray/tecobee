@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'thermostat', to: 'thermostat#get'
   get 'thermostat/temperature', to: 'thermostat#temperature'
   get 'thermostat_summary', to: 'thermostat_summary#get'
+
+  get 'runtime_report', to: 'runtime_report#get'
 end
