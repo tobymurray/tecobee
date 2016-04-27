@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'thermostat_summary', to: 'thermostat_summary#get'
 
   get 'runtime_report', to: 'runtime_report#get'
+  get 'runtime_report/query', to: 'runtime_report#query'
 end
