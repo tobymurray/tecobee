@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3061913682">
+  <component name="DataSourceManagerImpl" format="xml" hash="3765172352">
     <data-source source="LOCAL" name="Rails tecobee: test" uuid="55e3e1e2-9a4a-4a9a-a516-5e9c39457e72">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>

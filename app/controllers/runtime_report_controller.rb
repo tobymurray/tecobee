@@ -1,3 +1,5 @@
+require 'time'
+
 class RuntimeReportController < ApplicationController
   def get
     @token_request_response = TokenRequestResponse.first!
@@ -24,10 +26,14 @@ class RuntimeReportController < ApplicationController
 
     if start_datetime.empty? || end_datetime.empty?
       render text: "Start datetime or end datetime is missing"
+      return
     end
 
+    start_date = DateTime.parse(start_datetime).to_date
+    end_date = DateTime.parse(end_datetime).to_date
+
     @token_request_response = TokenRequestResponse.first!
-    query_string = URI.encode "#{EcobeeApi::FORMAT_JSON}&body={\"startDate\":\"#{start_datetime}\",\"endDate\":\"#{end_datetime}\",\"columns\":\"zoneCalendarEvent\",\"selection\":{\"selectionType\":\"thermostats\",\"selectionMatch\":\"310188254149\"}}"
+    query_string = URI.encode "#{EcobeeApi::FORMAT_JSON}&body={\"startDate\":\"#{start_date}\",\"endDate\":\"#{end_date}\",\"columns\":\"zoneCalendarEvent\",\"selection\":{\"selectionType\":\"thermostats\",\"selectionMatch\":\"310188254149\"}}"
     url = "#{EcobeeApi::RUNTIME_REPORT_ROOT}?#{query_string}"
     Rails.logger.debug(url)
     begin
