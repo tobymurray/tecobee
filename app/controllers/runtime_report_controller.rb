@@ -29,8 +29,8 @@ class RuntimeReportController < ApplicationController
       return
     end
 
-    utc_start_datetime = ActiveSupport::TimeZone.new('America/New_York').local_to_utc(DateTime.parse(local_start_datetime))
-    utc_end_datetime = ActiveSupport::TimeZone.new('America/New_York').local_to_utc(DateTime.parse(local_end_datetime))
+    utc_start_datetime = ActiveSupport::TimeZone.new('America/New_York').local_to_utc(DateTime.strptime(local_start_datetime, "%m/%d/%Y %l:%M %p"))
+    utc_end_datetime = ActiveSupport::TimeZone.new('America/New_York').local_to_utc(DateTime.strptime(local_end_datetime, "%m/%d/%Y %l:%M %p"))
 
     @token_request_response = TokenRequestResponse.first!
     query_string = URI.encode "#{EcobeeApi::FORMAT_JSON}&body={#{query_object_for_interval(utc_start_datetime, utc_end_datetime)},\"columns\":\"zoneCalendarEvent\",\"includeSensors\":\"true\",\"selection\":{\"selectionType\":\"thermostats\",\"selectionMatch\":\"310188254149\",\"includeRuntime\":\"true\"}}"
