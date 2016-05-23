@@ -48,7 +48,9 @@ class RuntimeReportController < ApplicationController
       end
     end
 
-    Rails.logger.debug(response.to_s)
+    runtime_report = RuntimeReportResponse.new(JSON.parse(response.to_str))
+
+    Rails.logger.debug(runtime_report.inspect)
     render text: response.to_s
   end
 
